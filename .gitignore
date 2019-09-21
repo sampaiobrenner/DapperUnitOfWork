@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/DapperUnitOfWork/v16
+/DapperUnitOfWork/bin/Debug
+/DapperUnitOfWork/obj/Debug
+/DapperUnitOfWork.Console/bin/Debug
+/DapperUnitOfWork.Console/obj/Debug
+/packages/Dapper.2.0.4/lib/netstandard2.0
+/packages
