@@ -28,16 +28,16 @@ namespace DapperUnitOfWork
         {
             try
             {
-                _transaction.Commit();
+                _transaction?.Commit();
             }
             catch
             {
-                _transaction.Rollback();
+                _transaction?.Rollback();
                 throw;
             }
             finally
             {
-                _transaction.Dispose();
+                _transaction?.Dispose();
                 _transaction = _connection.BeginTransaction();
                 ResetRepositories();
             }

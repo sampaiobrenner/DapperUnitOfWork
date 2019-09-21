@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace DapperUnitOfWork.Repositories
+namespace DapperUnitOfWork.Repositories.Base
 {
     internal abstract class RepositoryBase
     {

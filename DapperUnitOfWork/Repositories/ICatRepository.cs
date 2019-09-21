@@ -8,11 +8,11 @@ namespace DapperUnitOfWork.Repositories
     {
         void Add(Cat entity);
 
-        IEnumerable<Cat> All();
+        IEnumerable<Cat> GetAll();
 
-        Task<IEnumerable<Cat>> AllASync();
+        Task<IEnumerable<Cat>> GetAllASync();
 
-        Cat Find(int id);
+        Cat FindById(int id);
 
         IEnumerable<Cat> FindByBreedId(int breedId);
 

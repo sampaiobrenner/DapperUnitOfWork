@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using DapperUnitOfWork.Entities;
 
@@ -9,11 +10,19 @@ namespace DapperUnitOfWork.App
         {
             using (var uow = new UnitOfWork())
             {
-                var cats = uow.CatRepository.All();
+                //var cats = uow.CatRepository.GetAll();
 
-                var catsTask = uow.CatRepository.AllASync();
+                var catsTask = uow.CatRepository.GetAllASync();
 
-                var cat = await catsTask;
+                var cats = await catsTask;
+
+                Console.WriteLine("-------------------");
+                foreach (var cat in cats)
+                {
+                    Console.WriteLine($"Nome:   {cat.Name}");
+                    Console.WriteLine($"Idade:  {cat.Age}");
+                    Console.WriteLine("-------------------");
+                }
 
                 //var siamese = new Breed { Name = "Siamese" };
                 //uow.BreedRepository.Add(siamese);
@@ -28,8 +37,7 @@ namespace DapperUnitOfWork.App
                 //uow.Commit();
             }
 
-            System.Console.WriteLine("OK");
-            System.Console.ReadKey();
+            Console.ReadKey();
         }
 
         /*
